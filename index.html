@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Session Tracker - The Simplest Way for Coaches to Manage Clients & Sessions</title>
+    <meta name="description" content="Track client sessions, manage packages, and schedule appointments. Built for independent personal trainers, tennis coaches, and fitness instructors. No cloud, no login, just works.">
+    <meta name="keywords" content="personal trainer app, coach session tracker, client management, tennis coach software, fitness trainer tools, session scheduling, package tracking">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 1.05rem;
+        }
+        
+        .benefits {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        
+        .benefits-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-item h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .pricing {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .pricing h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            min-width: 280px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .pricing-card li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Client Session Tracker</h1>
+            <p>The simplest way for independent coaches to manage clients, track sessions, and schedule appointments. No cloud, no login, just works.</p>
+            <a href="https://apps.apple.com/app/client-session-tracker/id6766453138" class="cta-button" target="_blank">Download on App Store</a>
+        </div>
+    </header>
+    
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <h3>Weekly Schedule</h3>
+                    <p>See your entire week at a glance. Tap any time slot to schedule a session with a client. Tap a scheduled session to mark it complete or cancel.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Client Management</h3>
+                    <p>Add clients with contact info and notes. See each client's package balance and session history in one place.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📦</div>
+                    <h3>Package Tracking</h3>
+                    <p>Create packages with session counts and pricing. Automatically deduct sessions when you mark appointments complete.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Private</h3>
+                    <p>All data stays on your device. No cloud, no servers, no login. Sync across your iPhone, iPad, and Mac with iCloud.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Zero Friction</h3>
+                    <p>Download and start using immediately. No setup, no configuration, no learning curve. Just open and go.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable</h3>
+                    <p>Designed for independent coaches, not studios. Simple pricing that won't break the bank.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="benefits">
+        <div class="container">
+            <h2>Built for Independent Coaches</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h3>Stop Using Spreadsheets</h3>
+                    <p>No more Excel files, Google Sheets, or paper notebooks. Everything in one app designed specifically for coaches who manage their own clients.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Know Exactly Where You Stand</h3>
+                    <p>See which clients have sessions left, who needs to renew their package, and what your schedule looks like for the week. All in one view.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Focus on Coaching, Not Admin</h3>
+                    <p>Spend less time on paperwork and more time doing what you love. Track sessions in seconds, not minutes.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Works Offline</h3>
+                    <p>No internet required. Use it at the gym, park, or anywhere. Data syncs when you're back online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing">
+        <div class="container">
+            <h2>Simple, Affordable Pricing</h2>
+            <p style="color: #666; font-size: 1.1rem; margin-top: 10px;">No hidden fees. Cancel anytime.</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Monthly</h3>
+                    <div class="price">$2.99<span class="price-period">/month</span></div>
+                    <ul>
+                        <li>Unlimited clients</li>
+                        <li>Unlimited sessions</li>
+                        <li>iCloud sync</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="https://apps.apple.com/app/client-session-tracker/id6766453138" class="cta-button" target="_blank" style="background: #667eea; color: white;">Start Free Trial</a>
+                </div>
+                <div class="pricing-card" style="border: 2px solid #667eea;">
+                    <h3>Yearly</h3>
+                    <div class="price">$14.99<span class="price-period">/year</span></div>
+                    <p style="color: #28a745; font-weight: 600; margin-bottom: 20px;">Save 58%</p>
+                    <ul>
+                        <li>Unlimited clients</li>
+                        <li>Unlimited sessions</li>
+                        <li>iCloud sync</li>
+                        <li>Best value</li>
+                    </ul>
+                    <a href="https://apps.apple.com/app/client-session-tracker/id6766453138" class="cta-button" target="_blank" style="background: #667eea; color: white;">Start Free Trial</a>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; color: #666; font-size: 0.95rem;">3-day free trial included. No credit card required to start.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Client Session Tracker. Built for independent coaches.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <a href="https://xiaohao7023.github.io/SysMon-legal/privacy.html">Privacy Policy</a> | 
+                <a href="https://xiaohao7023.github.io/SysMon-legal/terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
